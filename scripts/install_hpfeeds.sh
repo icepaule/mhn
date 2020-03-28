@@ -6,10 +6,12 @@ set -x
 SCRIPTS=`dirname "$(readlink -f "$0")"`
 MHN_HOME=$SCRIPTS/..
 
+##mp added python-gevent to be installed by apt as pip had issues with it
+
 if [ -f /etc/debian_version ]; then
     apt-get -y update
     # this needs to be installed before calling "which pip", otherwise that command fails
-    apt-get -y install libffi-dev build-essential python-pip python-dev git libssl-dev supervisor
+    apt-get -y install libffi-dev build-essential python-pip python-dev git libssl-dev supervisor python-gevent
 
     PYTHON=`which python`
     PIP=`which pip`
