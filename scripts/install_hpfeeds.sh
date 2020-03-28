@@ -67,7 +67,8 @@ $VIRTUALENV -p $PYTHON env
 pip install cffi
 pip install pyopenssl==17.3.0
 pip install pymongo
-pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
+##mp pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
+pip install -e https://github.com/gabrielfalcao/pyev#egg=pyev
 pip install -e git+https://github.com/pwnlandia/evnet.git#egg=evnet-dev
 pip install .
 deactivate
