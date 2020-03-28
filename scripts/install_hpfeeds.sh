@@ -74,6 +74,8 @@ cd ..
 $VIRTUALENV -p $PYTHON env
 . env/bin/activate
 
+##mp added gevent
+pip install gevent
 pip install cffi
 pip install pyopenssl==17.3.0
 pip install pymongo
