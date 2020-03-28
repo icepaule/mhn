@@ -61,14 +61,21 @@ rm -rf /opt/hpfeeds
 git clone https://github.com/pwnlandia/hpfeeds
 chmod 755 -R hpfeeds
 cd hpfeeds
+
+## While pyev does not inclode libev anymore, this needs to be installed seperatly
+wget http://dist.schmorp.de/libev/libev-4.33.tar.gz
+tar -xvzf libev-4.33.tar.gz
+cd libev-4.33/
+make
+make make install
+cd ..
 $VIRTUALENV -p $PYTHON env
 . env/bin/activate
 
 pip install cffi
 pip install pyopenssl==17.3.0
 pip install pymongo
-##mp pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
-pip install -e https://github.com/gabrielfalcao/pyev.git#egg=pyev
+pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
 pip install -e git+https://github.com/pwnlandia/evnet.git#egg=evnet-dev
 pip install .
 deactivate
