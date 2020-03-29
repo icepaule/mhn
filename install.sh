@@ -41,13 +41,15 @@ if [ -f /etc/redhat-release ]; then
 
      ./install_supervisord.sh
 fi
-
+## apt already ran
 if [ -f /etc/debian_version ]; then
-    apt-get update && apt-get upgrade -y
-    apt-get install -y python-pip
-    pip install --upgrade pip
-    apt-get install apt-transport-https -y
-    apt-get install build-essential -y #needed for building some python modules
+    if [ ! -f /tmp_apt-done ]; then
+        apt-get update && apt-get upgrade -y
+        apt-get install -y python-pip
+        pip install --upgrade pip
+        apt-get install apt-transport-https -y
+        apt-get install build-essential -y #needed for building some python modules
+    fi
 fi
 
 echo "[`date`] Starting Installation of all MHN packages"
