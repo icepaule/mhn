@@ -36,6 +36,8 @@ elif [ -f /etc/redhat-release ]; then
 
     #install supervisor from pip2.7
     $PIP install supervisor
+##mp
+    $PIP install pymongo
 
 else
     echo -e "ERROR: Unknown OS\nExiting!"
