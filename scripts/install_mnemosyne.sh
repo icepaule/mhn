@@ -19,7 +19,8 @@ if [ -f /etc/debian_version ]; then
     PYTHON=`which python`
 #mp use python2.7
 #mp PYTHON=`which python`
-    PYTHON=`which python2`
+##mp    PIP=`which pip`
+    PIP="python2 -m pip "
     $PIP install virtualenv
     VIRTUALENV=`which virtualenv`
 
