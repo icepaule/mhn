@@ -13,7 +13,7 @@ if [ -f /etc/debian_version ]; then
 #mp use python2.7
 #mp PYTHON=`which python`
     PYTHON=`which python2`
-    PIP=`which pip`
+    PIP=`which pip2`
     $PIP install virtualenv
     VIRTUALENV=`which virtualenv`
 
@@ -51,7 +51,8 @@ MHN_HOME=`pwd`
 $VIRTUALENV  -p $PYTHON env
 . env/bin/activate
 
-pip install -r server/requirements.txt
+##mp
+$PIP install -r server/requirements.txt
 if [ -f /etc/redhat-release ]; then
     pip install pysqlite==2.8.1
     service redis start
@@ -66,10 +67,12 @@ echo "==========================================================="
 echo "  MHN Configuration"
 echo "==========================================================="
 
-python generateconfig.py
+##mp
+$PYTHON generateconfig.py
 
 echo -e "\nInitializing database, please be patient. This can take several minutes"
-python initdatabase.py
+##mp
+$PYTHON initdatabase.py
 cd $MHN_HOME
 
 mkdir -p /opt/www
