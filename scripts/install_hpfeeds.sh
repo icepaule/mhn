@@ -51,6 +51,8 @@ bash install_mongo.sh
 
 $PIP install virtualenv
 
+echo "[`date`] ========= Installing libev ========="
+
 cd /tmp
 wget https://github.com/pwnlandia/hpfeeds/releases/download/libev-4.15/libev-4.15.tar.gz
 tar zxvf libev-4.15.tar.gz 
@@ -58,6 +60,7 @@ cd libev-4.15
 ./configure && make && make install
 ldconfig /usr/local/lib/
 
+echo "[`date`] ========= Installing hpfeeds ========="
 
 mkdir -p /opt
 cd /opt
@@ -66,13 +69,6 @@ git clone https://github.com/pwnlandia/hpfeeds
 chmod 755 -R hpfeeds
 cd hpfeeds
 
-## While pyev does not inclode libev anymore, this needs to be installed seperatly
-wget http://dist.schmorp.de/libev/libev-4.33.tar.gz
-tar -xvzf libev-4.33.tar.gz
-cd libev-4.33/
-make
-make make install
-cd ..
 $VIRTUALENV -p $PYTHON env
 . env/bin/activate
 
