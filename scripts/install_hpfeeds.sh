@@ -104,4 +104,4 @@ EOF
 ldconfig /usr/local/lib/
 /etc/init.d/supervisor start || true
 sleep 5
-supervisorctl update
+##mp tmp supervisorctl update
