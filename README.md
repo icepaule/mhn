@@ -16,6 +16,14 @@ search past questions on the [modern-honey-network Google
 Group](https://groups.google.com/forum/#!forum/modern-honey-network), or send
 emails to <modern-honey-network@googlegroups.com>.
 
+## This Version/Fork
+has special "features" as I installed it on a Splunk server (Ubuntu 18.0.4 LTS) with Python 2.7 and 3.6 installed and the actual clients to run on little raspberry PI 3+4 at my home network.
+You may find my alteration starting in line with ##mp
+For questions pls mail to info@mpauli.de
+
+Pls no criticism for my pure coding, I'm more an anylst than a coder.  ;-)
+
+Marcus
 
 ## Features
 
