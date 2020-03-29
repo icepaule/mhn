@@ -156,8 +156,8 @@ EOF
 
 MHN_UUID=`python -c 'import uuid;print str(uuid.uuid4())'`
 SECRET=`python -c 'import uuid;print str(uuid.uuid4()).replace("-","")'`
-/opt/hpfeeds/env/bin/python /opt/hpfeeds/broker/add_user.py "collector" "$SECRET" "" "geoloc.events"
-
+##mp /opt/hpfeeds/env/bin/python /opt/hpfeeds/broker/add_user.py "collector" "$SECRET" "" "geoloc.events"
+/opt/hpfeeds/env/bin/python2 /opt/hpfeeds/broker/add_user.py "collector" "$SECRET" "" "geoloc.events"
 cat > $MHN_HOME/server/collector.json <<EOF
 {
   "IDENT": "collector",
@@ -168,7 +168,7 @@ EOF
 
 cat > /etc/supervisor/conf.d/mhn-collector.conf <<EOF 
 [program:mhn-collector]
-command=$MHN_HOME/env/bin/python collector_v2.py collector.json
+command=$MHN_HOME/env/bin/python2 collector_v2.py collector.json
 directory=$MHN_HOME/server
 stdout_logfile=/var/log/mhn/mhn-collector.log
 stderr_logfile=/var/log/mhn/mhn-collector.err
