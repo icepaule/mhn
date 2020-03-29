@@ -10,7 +10,9 @@ if [ -f /etc/debian_version ]; then
     OS=Debian  # XXX or Ubuntu??
     INSTALLER='apt-get'
     REPOPACKAGES='git build-essential python-pip python-dev redis-server libgeoip-dev nginx libsqlite3-dev'
-    PYTHON=`which python`
+#mp use python2.7
+#mp PYTHON=`which python`
+    PYTHON=`which python2`
     PIP=`which pip`
     $PIP install virtualenv
     VIRTUALENV=`which virtualenv`
