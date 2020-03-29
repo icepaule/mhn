@@ -74,15 +74,15 @@ $VIRTUALENV -p $PYTHON env
 . env/bin/activate
 
 ##mp added gevent
-pip install gevent
-pip install cffi
-pip install pyopenssl==17.3.0
-pip install pymongo
-pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
-pip install -e git+https://github.com/pwnlandia/evnet.git#egg=evnet-dev
+$PIP install gevent
+$PIP install cffi
+$PIP install pyopenssl==17.3.0
+$PIP install pymongo
+$PIP install -e git+https://github.com/couozu/pyev.git#egg=pyev
+$PIP install -e git+https://github.com/pwnlandia/evnet.git#egg=evnet-dev
 ##mp
-pip install supervisor==3.3.1
-pip install .
+$PIP install supervisor==3.3.1
+$PIP install .
 deactivate
 
 mkdir -p /var/log/mhn
