@@ -2,10 +2,13 @@
 
 set -e
 set -x
+##mp    PIP=`which pip2`
+    PIP="/usr/bin/python2 -m pip"
 
 apt-get update
 apt-get install -y git python-pip python-dev libgeoip-dev
-pip install virtualenv
+##mp
+$PIP install virtualenv
 
 SCRIPTS=`dirname $0`
 
@@ -14,7 +17,7 @@ then
     cd /opt/
     virtualenv hpfeeds-logger
     . hpfeeds-logger/bin/activate
-    pip install hpfeeds-logger==0.0.7.7
+    $PIP install hpfeeds-logger==0.0.7.7
 else
     echo "It looks like hpfeeds-logger is already installed. Moving on to configuration."
 fi
@@ -51,7 +54,8 @@ cat > /opt/hpfeeds-logger/splunk.json <<EOF
 EOF
 
 . /opt/hpfeeds/env/bin/activate
-python /opt/hpfeeds/broker/add_user.py "$IDENT" "$SECRET" "" "$CHANNELS"
+##mp
+python2 /opt/hpfeeds/broker/add_user.py "$IDENT" "$SECRET" "" "$CHANNELS"
 
 mkdir -p /var/log/mhn
 
