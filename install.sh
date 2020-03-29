@@ -139,6 +139,6 @@ done
 chown $WWW_OWNER /var/log/mhn/mhn.log
 
 chown $WWW_OWNER /var/log/mhn/mhn.log
-supervisorctl restart mhn-celery-worker
+##mp supervisorctl restart mhn-celery-worker
 
 echo "[`date`] Completed Installation of all MHN packages"
