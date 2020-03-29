@@ -13,7 +13,9 @@ if [ -f /etc/debian_version ]; then
     # this needs to be installed before calling "which pip", otherwise that command fails
     apt-get -y install libffi-dev build-essential python-pip python-dev git libssl-dev supervisor python-gevent
 
-    PYTHON=`which python`
+#mp use python2.7
+#mp PYTHON=`which python`
+    PYTHON=`which python2`
     PIP=`which pip`
     $PIP install virtualenv
     VIRTUALENV=`which virtualenv`
