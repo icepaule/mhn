@@ -17,7 +17,9 @@ if [ -f /etc/debian_version ]; then
     REPOPACKAGES=''
 
     PYTHON=`which python`
-    PIP=`which pip`
+#mp use python2.7
+#mp PYTHON=`which python`
+    PYTHON=`which python2`
     $PIP install virtualenv
     VIRTUALENV=`which virtualenv`
 
