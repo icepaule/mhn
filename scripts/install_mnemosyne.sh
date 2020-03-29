@@ -53,7 +53,8 @@ git clone https://github.com/pwnlandia/mnemosyne.git
 cd mnemosyne
 $VIRTUALENV -p $PYTHON env
 . env/bin/activate
-pip install -r requirements.txt
+##mp
+$PIP install -r requirements.txt
 chmod 755 -R .
 
 IDENT=mnemosyne
@@ -89,7 +90,8 @@ EOF
 
 deactivate
 . /opt/hpfeeds/env/bin/activate
-python /opt/hpfeeds/broker/add_user.py "$IDENT" "$SECRET" "" "$CHANNELS"
+##mp
+$PYTHON /opt/hpfeeds/broker/add_user.py "$IDENT" "$SECRET" "" "$CHANNELS"
 
 mkdir -p /var/log/mhn/
 
