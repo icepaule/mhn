@@ -49,6 +49,7 @@ if [ -f /etc/debian_version ]; then
         pip install --upgrade pip
         apt-get install apt-transport-https -y
         apt-get install build-essential -y #needed for building some python modules
+        touch /tmp_apt-done
     fi
 fi
 
