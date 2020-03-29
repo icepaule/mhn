@@ -73,7 +73,7 @@ $PYTHON generateconfig.py
 
 echo -e "\nInitializing database, please be patient. This can take several minutes"
 ##mp
-$PYTHON initdatabase.py
+##mp TEMPORY ONLY $PYTHON initdatabase.py
 cd $MHN_HOME
 
 mkdir -p /opt/www
