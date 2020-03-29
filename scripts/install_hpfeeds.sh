@@ -79,6 +79,8 @@ pip install pyopenssl==17.3.0
 pip install pymongo
 pip install -e git+https://github.com/couozu/pyev.git#egg=pyev
 pip install -e git+https://github.com/pwnlandia/evnet.git#egg=evnet-dev
+##mp
+pip install supervisor==3.3.1
 pip install .
 deactivate
 
