@@ -68,4 +68,4 @@ autorestart=true
 startsecs=1
 EOF
 
-supervisorctl update
+##mp supervisorctl update
